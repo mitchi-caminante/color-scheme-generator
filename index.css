@@ -1,0 +1,262 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+    text-align: center;
+    font-optical-sizing: auto;
+    padding-bottom: 50px;
+    font-family: "Inter", sans-serif;
+}
+
+/* Font sizes */
+html {
+    font-size: 100%; /* Base size, typically 16px */
+}
+body {
+    font-size: 1rem; 
+}
+h1 {
+    font-size: 2.5rem; 
+    margin: 1rem 0; /* Add margin for spacing */
+}
+h2 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+p {
+    font-size: 1rem;
+    margin: 0.5rem 0; /* Reduced margin for paragraph spacing */
+}
+
+/* Responsive font sizes */
+@media (min-width: 600px) {
+    body {
+        font-size: 1.125rem; /* 18px */
+    }
+    h1 {
+        font-size: 2.75rem;
+    }
+    h2 {
+        font-size: 2.25rem;
+    }
+    h3 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (min-width: 900px) {
+    body {
+        font-size: 1.25rem; 
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        font-size: 1.375rem; 
+    }
+    h1 {
+        font-size: 3.25rem;
+    }
+    h2 {
+        font-size: 2.75rem;
+    }
+    h3 {
+        font-size: 2.25rem;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none; 
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px; 
+}
+
+header {
+    background-image: url('header-background.jpg');
+    background-size: cover;
+    text-align: center;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    width: 100%;
+}
+
+.color-picker-container {
+    background-color: #d9bfd9;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.color-picker {
+    flex: 1;
+    margin: 0.5px;
+    width: 3.75rem; 
+    height: 2.5rem; 
+    border: 1px solid beige;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none; 
+    transition: transform 0.2s, box-shadow 0.2s ease; /* Smooth scale transition */
+}
+
+.color-picker:hover,
+.color-picker:focus {
+    transform: scale(1.05);
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+/* Drop down menu styling  */
+select {
+    flex: 2;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    appearance: none;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s ease;
+    height: 2.5rem;
+    margin: 0 5px;
+}
+
+select:hover,
+select:focus {
+    transform: scale(1.05);
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+/* Get Scheme Button Styling */
+.get-scheme-btn {
+    flex: 1;
+    background-color: white;
+    border: transparent;
+    border-radius: 5px;
+    height: 2.5rem;
+    font-size: 1rem; 
+    line-height: 1rem; 
+    margin: 0 5px;
+    transition: transform 0.3s, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.get-scheme-btn:hover,
+.get-scheme-btn:focus  {
+    transform: scale(1.05);
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+/* loading message styling  */
+.loading-msg {
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+/* color scheme display */
+
+.color-scheme-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.color-block-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;   
+}
+
+.color-block {
+    width: 18vw; 
+    height: 60vh; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hex-value-text-disp {
+    background-color: rgba(255, 255, 255, 0.7); 
+    text-align: center;
+    padding: 10px 0; 
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: bold; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #392d39; 
+}
+.color-block:hover,
+.color-block:focus {
+    transform: scale(1.05);
+    box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.hover-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px 10px;
+    transition: opacity 0.7s ease;
+    white-space: wrap;
+    z-index: 2;
+}
+
+.color-block:hover .hover-text,
+.color-block:focus .hover-text {
+    visibility: visible; /* Show text on hover */
+    opacity: 1; /* Make it fully opaque */
+}

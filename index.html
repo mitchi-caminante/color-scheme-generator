@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Scheme Picker</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Color Scheme Picker</h1>
+        </header>
+        <main>
+            <div class="color-picker-container">
+               <label for="color-picker" class="custom-color-picker">
+                    <input type="color" id="color-picker" value="#EE82EE"class="color-picker" aria-label="Color Picker Button">
+                </label>
+                <select name="scheme-type" id="scheme-type" aria-label="Color Scheme Type">
+                    <option value="monochrome">Monochrome</option>
+                    <option value="monochrome-dark">Monochrome Dark</option>
+                    <option value="monochrome-light">Monochrome Light</option>
+                    <option value="analogic">Analogic</option>
+                    <option value="complement">Complementary</option>
+                    <option value="analogic-complement">Analogic Complementary</option>
+                    <option value="triad">Triad</option>
+                    <option value="quad">Quad</option>
+                </select>
+                <button class="get-scheme-btn" id="get-scheme-btn" aria-label="Get color scheme">Get Color Scheme</button>
+            </div>
+            <div class="color-scheme-container" id="color-scheme-container">
+                <ul class="color-block-list" id="color-block-list" >
+                    <!-- color blocks will generate here -->
+                </ul>
+            </div>
+        </main>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
